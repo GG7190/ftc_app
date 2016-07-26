@@ -1,6 +1,4 @@
-package com.greengirls.ResQ2016;
-
-import com.greengirls.ResQ2016.RobotHardware2016;
+package com.qualcomm.ftcrobotcontroller.greengirls.ResQ2016;
 
 /**
  * Created by Dell User on 10/25/2015.

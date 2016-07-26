@@ -1,6 +1,6 @@
-package com.greengirls.chinaTeleOp;
+package com.qualcomm.ftcrobotcontroller.greengirls.chinaTeleOp;
 
-import com.greengirls.RobotHardwareChina;
+import com.qualcomm.ftcrobotcontroller.greengirls.RobotHardwareChina;
 import com.qualcomm.robotcore.util.Range;
 
 /**

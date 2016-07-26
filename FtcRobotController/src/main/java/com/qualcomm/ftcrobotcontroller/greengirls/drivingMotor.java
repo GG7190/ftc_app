@@ -1,4 +1,4 @@
-package com.greengirls;
+package com.qualcomm.ftcrobotcontroller.greengirls;
 
 /**
  * Created by G201956 on 9/20/2015.

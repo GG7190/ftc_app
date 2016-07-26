@@ -1,6 +1,6 @@
-package com.greengirls.chinaAutonomous;
+package com.qualcomm.ftcrobotcontroller.greengirls.chinaAutonomous;
 
-import com.greengirls.RobotHardwareChina;
+import com.qualcomm.ftcrobotcontroller.greengirls.RobotHardwareChina;
 
 import java.util.concurrent.TimeUnit;
 

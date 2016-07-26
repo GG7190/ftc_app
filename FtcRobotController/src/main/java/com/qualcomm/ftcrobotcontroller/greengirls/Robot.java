@@ -1,4 +1,4 @@
-package com.greengirls;
+package com.qualcomm.ftcrobotcontroller.greengirls;
 
 /**
  *  Represents the state of our Robot.

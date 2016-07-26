@@ -1,4 +1,4 @@
-package com.greengirls;
+package com.qualcomm.ftcrobotcontroller.greengirls;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotorController;
