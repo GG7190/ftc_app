@@ -13,8 +13,7 @@ public class Autonomous extends GGLibrary {
     int state = 0;
     int count = 0;
 
-    @Override
-    public void loop() {
+    @Override public void loop() {
 
         switch (state) {
             case 0:

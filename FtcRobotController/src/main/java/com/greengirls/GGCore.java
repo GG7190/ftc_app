@@ -9,17 +9,17 @@ public class GGCore extends GGHardware {
     protected final static double SERVO1_MID_RANGE  = 0.45;
     protected final static double SERVO1_MAX_RANGE  = 1.00;
 
-    //put ball channel into open position
-    public void rightBasket() {
+
+    //servo1 positions
+    public void minServo1() {
         servo1.setPosition(SERVO1_MIN_RANGE);
     }
 
-    public void middleBasket() {
+    public void midServo1() {
         servo1.setPosition(SERVO1_MID_RANGE);
     }
 
-    //put ballChannel into close position
-    public void leftBasket() {
+    public void maxServo1() {
         servo1.setPosition(SERVO1_MAX_RANGE);
     }
 
@@ -51,18 +51,18 @@ public class GGCore extends GGHardware {
     }
 
     //get the power to collector motor
-    public double getCollectorMotor(){
-        return collectorMotor.getPower();
+    public double getMotor1(){
+        return motor1.getPower();
     }
 
     //set the power to collector motor
-    public void setCollectorMotor(double power) {
-        collectorMotor.setPower(power);
+    public void setMotor1(double power) {
+        motor1.setPower(power);
     }
 
     //stop collector
-    public void stopCollector(){
-        collectorMotor.setPower(0);
+    public void stopMotor1(){
+        motor1.setPower(0);
     }
 
     public boolean checkRed (){
@@ -70,18 +70,7 @@ public class GGCore extends GGHardware {
     }
 
     public boolean checkBlue (){return sensorRGB.blue()>0;}
-    //coil in
-    //  public void coilIn(){
-    //      coilMotor.setPower(-1);
-    //  }
-    //coil out
-    // public void coilOut(){
-    //     coilMotor.setPower(1);
-    // }
-    //stop coil motor
-    // public void coilStop(){
-    //     coilMotor.setPower(0);
-    // }
+
 
     //the set up of encoders
     // had to use math.round to convert a double to an int

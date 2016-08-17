@@ -7,125 +7,58 @@ import com.greengirls.GGCore;
  */
 public class GGLibrary extends GGCore{
 
-
-    @Override public void init() {
-
-        super.init();
-
+/*
         // add GGLibrary specific code here
-    }
+        public void leftWingOut() {
+            servo2.setPosition(LWING_MIN_RANGE);}
 
-    @Override public void loop() {
-
-        // Right wheels will be controlled by the right stick
-        // Left wheels will be controlled by the left stick
-        float leftWheels = gamepad1.left_stick_y;
-        float rightWheels = -gamepad1.right_stick_y;
-
-        // write the values to the motors
-        setRightMotors(rightWheels);
-        setLeftMotors(leftWheels);
-
-        //When collector is collecting balls
-        if (gamepad1.right_bumper){
-        setCollectorMotor(1);
-        }
-        //When collector is spitting balls out
-        else if (gamepad1.left_bumper){
-        setCollectorMotor(-1);
-        }
-        else{
-        stopCollector();
+        public void leftWingIn() {
+            servo2.setPosition(LWING_MAX_RANGE);
         }
 
-        //open and close basket button mapping
-        //tilt left
-        if (gamepad2.right_bumper) {
-        rightBasket();
+        public void rightWingOut() {
+            servo3.setPosition(RWING_MIN_RANGE);
         }
-        //When button x is pressed on gamepad 2 tilt right
-        else if (gamepad2.left_bumper){
-        leftBasket();
+        public void rightWingIn() {
+            servo3.setPosition(RWING_MAX_RANGE);
         }
-        //When button right bumper and left bumper on gampe pad 2 is not pressed keeps basket in middle
-        else {
-        middleBasket();
+        public void dinoUp(){
+            servo4.setPosition(LDINO_MIN_RANGE);
+            servo5.setPosition(RDINO_MIN_RANGE);
         }
 
-        //When button y is pressed on game pad 2 the lift extends
-        if (gamepad2.b){
-        liftOut();
-        //coilOut();
+        public void dinoDown (){
+            servo4.setPosition(LDINO_MAX_RANGE);
+            servo5.setPosition(RDINO_MAX_RANGE);
         }
-        //When button a is pressed on game pad 2 the lift retracts
-        else if (gamepad2.x){
-        liftIn();
-        //coilIn();
+*/
+        //lift out
+        public void liftOut() {
+            motor3.setPower(-1);
+            motor4.setPower(1);
         }
-        //when button a is not pressed stop lift motor
-        else {
-        stoplift();
-        //coilStop();
+        //lift in
+        public void liftIn() {
+            motor3.setPower(1);
+            motor4.setPower(-1);
         }
-        //when button x is pressed on gamepad 2 lift angle increases
-        if (gamepad2.y){
-        liftUp();
+        //stop lift motor
+        public void stoplift() {
+            motor3.setPower(0);
+            motor4.setPower(0);
+            motor2.setPower(0);
         }
-        //when button b is pressed on gamepad 2 lift angle decreases
-        else if (gamepad2.a){
-        liftDown();
-        }
-        //when b and x are not pressed stop lift angle motor
-        else {
-        liftStop();
 
+        //lift angle up
+        public void liftUp() {
+            motor2.setPower(1);
         }
-        //when dpad left is pressed the left basket wing extends
-        if (gamepad2.dpad_left){
-        rightWingOut();
+        //lift angle down
+        public void liftDown(){
+            motor2.setPower(-1);
         }
-        //when dpad right is pressed the right basket wing extends
-        else if (gamepad2.dpad_right){
-        leftWingOut();
+        //angle motor stop
+        public void liftStop() {
+            motor2.setPower(0);
         }
-        //if neither game pad buttons are pressed the wings stay in the starting position
-        else {
-        rightWingIn();
-        leftWingIn();
-        }
-        //when dpad up is pressed the dino arms go up
-        if (gamepad2.dpad_down){
-        dinoUp();
-        }
-        //when dpad down is pressed the dino arms go down
-        else if (gamepad2.dpad_up){
-        dinoDown();
-        }
-        telemetry.addData("right bumper",gamepad2.right_bumper);
-        telemetry.addData("left bumper",gamepad2.left_bumper);
-        telemetry.addData("dpad left",gamepad2.dpad_left);
-        telemetry.addData("dpad right",gamepad2.dpad_right);
-
-
-
-        }
-}
-/**
- * Controller One
- *   left_stick_x moves the left wheels forward and backward
- *   right_stick_x moves the right wheels forward and backward
- *   right_trigger collects balls
- *   right_trigger spits out balls
- *
- * Controller Two
- *  Left bumper triggers the dino arm servos to open
- *  Right bumper triggers the dino arm servos to close
- *  Holding B triggers the ball channel servo to open
- *  Pressing Y raises the deflector arm
- *  Pressing A lowers the deflector arm
- *  Holding X shoots
-
- */
-
-
 }

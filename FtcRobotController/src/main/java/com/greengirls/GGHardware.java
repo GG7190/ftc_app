@@ -14,26 +14,27 @@ import com.qualcomm.robotcore.hardware.ServoController;
 public class GGHardware extends OpMode {
 
     //define Motors and MotorControllers
-    DcMotorController rightMotorController;
-    DcMotor rightFrontMotor;
-    DcMotor rightBackMotor;
-    DcMotorController leftMotorController;
-    DcMotor leftFrontMotor;
-    DcMotor leftBackMotor;
-    DcMotorController attachmentMotorController;
-    DcMotor collectorMotor;
-    DcMotor angleMotor;
-    DcMotorController liftMotorController;
-    DcMotor lift1;
-    DcMotor lift2;
-    ServoController servoController;
-    Servo servo1;
-    Servo leftWing;
-    Servo rightWing;
-    Servo leftDino;
-    Servo rightDino;
-    ColorSensor sensorRGB;
-    DeviceInterfaceModule cdim;
+    public DcMotorController rightWheelController;
+    public DcMotor rightFrontMotor;
+    public DcMotor rightBackMotor;
+    public DcMotorController leftMotorController;
+    public DcMotor leftFrontMotor;
+    public DcMotor leftBackMotor;
+    public DcMotorController attachmentMotorController1;
+    public DcMotor motor1;
+    public DcMotor motor2;
+    public DcMotorController attachmentMotorController2;
+    public DcMotor motor3;
+    public DcMotor motor4;
+    public ServoController servoController;
+    public Servo servo1;
+    public Servo servo2;
+    public Servo servo3;
+    public Servo servo4;
+    public Servo servo5;
+    public Servo servo6;
+    public ColorSensor sensorRGB;
+    public DeviceInterfaceModule cdim;
 
     static final int LED_CHANNEL = 5;
 
@@ -52,7 +53,7 @@ public class GGHardware extends OpMode {
         cdim.setDigitalChannelState(LED_CHANNEL, false);
 
         //Map hardware for Right motor controller
-        rightMotorController = hardwareMap.dcMotorController.get("rightdrive");
+        rightWheelController = hardwareMap.dcMotorController.get("rightdrive");
         rightFrontMotor = hardwareMap.dcMotor.get("rfront");
         rightBackMotor = hardwareMap.dcMotor.get("rback");
 
@@ -61,23 +62,24 @@ public class GGHardware extends OpMode {
         leftFrontMotor = hardwareMap.dcMotor.get("lfront");
         leftBackMotor = hardwareMap.dcMotor.get("lback");
 
-        //Map hardware for attachment motor controller
-        attachmentMotorController = hardwareMap.dcMotorController.get("attachment");
-        collectorMotor = hardwareMap.dcMotor.get("collector");
-        angleMotor = hardwareMap.dcMotor.get("anglemotor");
+        //Map hardware for attachment motor controller 1
+        attachmentMotorController1 = hardwareMap.dcMotorController.get("attachment1");
+        motor1 = hardwareMap.dcMotor.get("motor1");
+        motor2 = hardwareMap.dcMotor.get("motor2");
 
-        //Map hardware for lift motor controller
-        liftMotorController = hardwareMap.dcMotorController.get("lift");
-        lift1 = hardwareMap.dcMotor.get("lift1");
-        lift2 = hardwareMap.dcMotor.get("lift2");
+        //Map hardware for attachment motor controller 2
+        attachmentMotorController2 = hardwareMap.dcMotorController.get("attachment2");
+        motor3 = hardwareMap.dcMotor.get("motor3");
+        motor4 = hardwareMap.dcMotor.get("motor4");
 
         //Map hardware for servo controller
         servoController = hardwareMap.servoController.get("servo");
         servo1 = hardwareMap.servo.get("servo1");
-        leftWing = hardwareMap.servo.get("lwing");
-        rightWing = hardwareMap.servo.get("rwing");
-        leftDino = hardwareMap.servo.get("ldino");
-        rightDino = hardwareMap.servo.get("rdino");
+        servo2 = hardwareMap.servo.get("servo2");
+        servo3 = hardwareMap.servo.get("servo3");
+        servo4 = hardwareMap.servo.get("servo4");
+        servo5 = hardwareMap.servo.get("servo5");
+        servo6 = hardwareMap.servo.get("servo6");
 
         hardwareMap.logDevices();
 
@@ -86,6 +88,10 @@ public class GGHardware extends OpMode {
 
         // get a reference to our ColorSensor object.
         // sensorRGB = hardwareMap.colorSensor.get("color");
+
+    }
+
+    @Override public void loop(){
 
     }
 }
