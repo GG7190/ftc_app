@@ -5,8 +5,10 @@ import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorController;
 import com.qualcomm.robotcore.hardware.DeviceInterfaceModule;
+import com.qualcomm.robotcore.hardware.GyroSensor;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.hardware.ServoController;
+import com.qualcomm.robotcore.hardware.TouchSensor;
 
 /**
  * Created by GreenGirls on 8/2/2016.
@@ -33,24 +35,35 @@ public class GGHardware extends OpMode {
     public Servo servo4;
     public Servo servo5;
     public Servo servo6;
-    public ColorSensor sensorRGB;
+    public ColorSensor colorSensor;
     public DeviceInterfaceModule cdim;
+    public TouchSensor touchSensor;
+    public GyroSensor gyroSensor;
 
     static final int LED_CHANNEL = 5;
 
     @Override public void init() {
 
-        cdim = hardwareMap.deviceInterfaceModule.get("dim");
+        //Map sensors below
+
+        // get a reference to our ColorSensor object.
 
         // set the digital channel to output mode.
         // remember, the Adafruit sensor is actually two devices.
         // It's an I2C sensor and it's also an LED that can be turned on or off.
         // cdim.setDigitalChannelMode(LED_CHANNEL, DigitalChannelController.Mode.OUTPUT);
-
-        // get a reference to our ColorSensor object.
-        sensorRGB = hardwareMap.colorSensor.get("color");
-        sensorRGB.enableLed(false);
+        cdim = hardwareMap.deviceInterfaceModule.get("dim");
+        colorSensor = hardwareMap.colorSensor.get("color");
+        colorSensor.enableLed(false);
         cdim.setDigitalChannelState(LED_CHANNEL, false);
+
+        //map touch sensor
+        touchSensor = hardwareMap.touchSensor.get("touch");
+
+        //map gyro
+        gyroSensor = hardwareMap.gyroSensor.get("gyro");
+
+        //Map Hardware
 
         //Map hardware for Right motor controller
         rightWheelController = hardwareMap.dcMotorController.get("rightdrive");
@@ -87,7 +100,7 @@ public class GGHardware extends OpMode {
         // cdim = hardwareMap.deviceInterfaceModule.get("dim");
 
         // get a reference to our ColorSensor object.
-        // sensorRGB = hardwareMap.colorSensor.get("color");
+        // colorSensor = hardwareMap.colorSensor.get("color");
 
     }
 

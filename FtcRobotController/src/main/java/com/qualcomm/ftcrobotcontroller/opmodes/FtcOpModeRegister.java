@@ -31,6 +31,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */
 
 package com.qualcomm.ftcrobotcontroller.opmodes;
 
+import com.greengirls.newchallenge.autonomous.sensorTestAuto;
 import com.greengirls.newchallenge.teleop.teleOp;
 import com.qualcomm.robotcore.eventloop.opmode.OpModeManager;
 import com.qualcomm.robotcore.eventloop.opmode.OpModeRegister;
@@ -64,7 +65,7 @@ public class FtcOpModeRegister implements OpModeRegister {
     manager.register ("PushBotAuto", PushBotAuto.class);
     manager.register ("PushBotManual", PushBotManual.class);
     manager.register("teleOp", teleOp.class);
-
+    manager.register("sensorTestAuto", sensorTestAuto.class);
 
     /*
      * Uncomment any of the following lines if you want to register an op mode.

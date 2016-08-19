@@ -7,8 +7,8 @@ import com.greengirls.GGCore;
  */
 public class GGLibrary extends GGCore{
 
-/*
-        // add GGLibrary specific code here
+
+      /*  // add GGLibrary specific code here
         public void leftWingOut() {
             servo2.setPosition(LWING_MIN_RANGE);}
 
@@ -30,8 +30,8 @@ public class GGLibrary extends GGCore{
         public void dinoDown (){
             servo4.setPosition(LDINO_MAX_RANGE);
             servo5.setPosition(RDINO_MAX_RANGE);
-        }
-*/
+        }*/
+
         //lift out
         public void liftOut() {
             motor3.setPower(-1);

@@ -130,7 +130,7 @@ public class MRRGBExample extends LinearOpMode {
       }
 
       // convert the RGB values to HSV values.
-      //Color.RGBToHSV((sensorRGB.red() * 8), (sensorRGB.green() * 8), (sensorRGB.blue() * 8), hsvValues);
+      //Color.RGBToHSV((colorSensor.red() * 8), (colorSensor.green() * 8), (colorSensor.blue() * 8), hsvValues);
       Color.RGBToHSV(sensorRGB.red()*8, sensorRGB.green()*8, sensorRGB.blue()*8, hsvValues);
 
       // send the info back to driver station using telemetry function.

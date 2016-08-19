@@ -56,6 +56,7 @@ public class teleOp extends GGLibrary{
             stoplift();
             //coilStop();
         }
+
         //when button x is pressed on gamepad 2 lift angle increases
         if (gamepad2.y){
             liftUp();
@@ -69,6 +70,7 @@ public class teleOp extends GGLibrary{
             liftStop();
 
         }
+
         /*
         //when dpad left is pressed the left basket wing extends
         if (gamepad2.dpad_left){
@@ -90,9 +92,9 @@ public class teleOp extends GGLibrary{
         //when dpad down is pressed the dino arms go down
         else if (gamepad2.dpad_up){
             dinoDown();
-        }
+        }*/
 
-        */
+
         telemetry.addData("right bumper",gamepad2.right_bumper);
         telemetry.addData("left bumper",gamepad2.left_bumper);
         telemetry.addData("dpad left",gamepad2.dpad_left);

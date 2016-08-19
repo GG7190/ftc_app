@@ -66,10 +66,10 @@ public class GGCore extends GGHardware {
     }
 
     public boolean checkRed (){
-        return sensorRGB.red()>0;
+        return colorSensor.red()>0;
     }
 
-    public boolean checkBlue (){return sensorRGB.blue()>0;}
+    public boolean checkBlue (){return colorSensor.blue()>0;}
 
 
     //the set up of encoders
@@ -142,5 +142,9 @@ public class GGCore extends GGHardware {
         return l_return;
 
     } // have_drive_encoders_reset
+
+    //Gyroscope program
+
+
 }
 
