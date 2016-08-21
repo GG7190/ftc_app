@@ -46,27 +46,12 @@ public class sensorTestAuto extends OpMode{
     }
 
     public void loop() {
-        int state = 0;
-        int count = 0;
-        int heading;
-
-        switch (state){
-            case 0:
-                //test touch
-                setLeftMotors(.5);
-                if (touchSensor .isPressed()){
-                    //stop motors
-                    setLeftMotors(0);
-
-                    state++;
-                }
-                break;
-
-           /* case 1:
-                //test gyro
-
-                //calibrate gyro
-                gyroSensor.calibrate();*/
+        if (touchSensor.isPressed()){
+            setLeftMotors(0.0);
         }
+        else {
+            setLeftMotors(0.5);
+        }
+
     }
 }
